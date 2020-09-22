@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Prediction</title>
+   <link rel="stylesheet" href="style.css" />
+  <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap' rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel="stylesheet" href="style.css">
+  
+</head>
+
+
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" class="form">
+    	<label><input  type="text" name="experience"  placeholder="Experience (in years)" required="required" /></label>
+        <label><input  type="text" name="test_score" placeholder="Test Score (out of 10)" required="required" /></label>
+		<label><input  type="text" name="interview_score" placeholder="Interview Score (out of 10)" required="required" /></label>
+
+        <button type="submit"  class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     {{ prediction_text }}
+
+ </div>
+
+
+
+</html>
